@@ -1,4 +1,8 @@
 export interface Pet {
-  variable1: string;
-  variable2: number;
+  id: number;
+  name: string;
+  kind: string;
+  image: string;
+  profileText: string;
+  popularity: string;
 }
