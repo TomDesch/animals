@@ -8,7 +8,8 @@ import {Pet} from "../model/Pet";
   styleUrls: ['./profile-gallery.component.css']
 })
 export class ProfileGalleryComponent implements OnInit {
-  public pets: Pet[] = [];
+
+  pets: Pet[] = [];
 
   constructor(private petService: PetService) {
 
