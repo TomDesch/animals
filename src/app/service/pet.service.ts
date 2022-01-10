@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,13 @@ import {environment} from "../../environments/environment";
 
 export class PetService {
 
-  private responseUrl: string;
+  private readonly responseUrl: string;
 
   constructor(private http: HttpClient) {
     this.responseUrl = `${environment.backendUrl}/pets`;
   }
 
-
+  getPets(): Observable<any> {
+    return this.http.get(this.responseUrl);
+  }
 }
