@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +8,11 @@ import {Injectable} from '@angular/core';
 
 export class PetService {
 
-  constructor() {
+  private responseUrl: string;
+
+  constructor(private http: HttpClient) {
+    this.responseUrl = `${environment.backendUrl}/pets`;
   }
+
+
 }
