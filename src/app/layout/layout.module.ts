@@ -13,6 +13,9 @@ import {AppRoutingModule} from "../app-routing.module";
     FooterComponent,
     LayoutComponent
   ],
+  exports: [
+    LayoutComponent
+  ],
   imports: [
     CommonModule,
     AppRoutingModule
