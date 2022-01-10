@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  private _year: number;
+
+  constructor() {
+    this._year = new Date().getFullYear();
+  }
+
+
+  get year(): number {
+    return this._year;
+  }
 
   ngOnInit(): void {
+    this.updateYear();
+  }
+
+  updateYear() {
+    this._year = new Date().getFullYear();
   }
 
 }
