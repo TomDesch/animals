@@ -4,5 +4,5 @@ export interface Pet {
   kind: string;
   image: string;
   profileText: string;
-  popularity: string;
+  popularity: number;
 }
