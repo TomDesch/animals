@@ -10,6 +10,7 @@ import {Pet} from "../model/Pet";
 export class ProfileGalleryComponent implements OnInit {
 
   pets: Pet[] = [];
+  private _selectedPet?: Pet;
 
   constructor(private petService: PetService) {
 
@@ -24,4 +25,16 @@ export class ProfileGalleryComponent implements OnInit {
       .subscribe(pets => this.pets = pets);
   }
 
+  selectPet(pet: Pet): void {
+    if(this._selectedPet === pet) {
+      this._selectedPet = undefined;
+      return;
+    }
+     this._selectedPet = pet;
+     console.log("PET IS NOW " + this.selectedPet.name);
+  }
+
+  get selectedPet(): Pet {
+    return this._selectedPet!;
+  }
 }

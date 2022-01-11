@@ -10,14 +10,18 @@ import {Pet} from "../model/Pet";
 
 export class PetService {
 
-  private readonly responseUrl: string;
+  private readonly _responseUrl: string;
+
+  get responseUrl(): string {
+    return this._responseUrl;
+  }
 
   constructor(private http: HttpClient) {
-    this.responseUrl = `${environment.backendUrl}/pets`;
+    this._responseUrl = `${environment.backendUrl}/pets`;
   }
 
   getPets(): Observable<any> {
-    return this.http.get<Pet[]>(this.responseUrl)
+    return this.http.get<Pet[]>(this._responseUrl)
       .pipe(
         map(pets => pets.sort((p1: Pet, p2: Pet) => p1.name.localeCompare(p2.name)))
       );
