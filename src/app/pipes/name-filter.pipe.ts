@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {Pet} from "../model/Pet";
 
 @Pipe({
@@ -7,7 +7,7 @@ import {Pet} from "../model/Pet";
 export class NameFilterPipe implements PipeTransform {
 
   transform(pets: Pet[], filter?: string): Pet[] {
-    if(filter === undefined){
+    if (filter === undefined) {
       return pets;
     }
     return pets.filter(pet => pet.name.toLowerCase().includes(filter.toLowerCase()));

@@ -10,7 +10,7 @@ import {Pet} from "../model/Pet";
 export class ProfileGalleryComponent implements OnInit {
 
   pets: Pet[] = [];
-  private _selectedPet?: Pet;
+  _selectedPet?: Pet;
   searchText?: string;
 
   constructor(private petService: PetService) {
@@ -32,7 +32,6 @@ export class ProfileGalleryComponent implements OnInit {
       return;
     }
      this._selectedPet = pet;
-     console.log("PET IS NOW " + this.selectedPet.name);
   }
 
   get selectedPet(): Pet {

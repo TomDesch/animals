@@ -7,6 +7,7 @@ import {LayoutModule} from "./layout/layout.module";
 import { ProfileGalleryComponent } from './profile-gallery/profile-gallery.component';
 import {HttpClientModule} from "@angular/common/http";
 import {NameFilterPipe} from "./pipes/name-filter.pipe";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {NameFilterPipe} from "./pipes/name-filter.pipe";
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
 
   providers: [],
