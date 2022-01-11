@@ -11,6 +11,7 @@ export class ProfileGalleryComponent implements OnInit {
 
   pets: Pet[] = [];
   private _selectedPet?: Pet;
+  searchText?: string;
 
   constructor(private petService: PetService) {
 
