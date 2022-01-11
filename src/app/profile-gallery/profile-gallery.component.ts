@@ -27,11 +27,11 @@ export class ProfileGalleryComponent implements OnInit {
   }
 
   selectPet(pet: Pet): void {
-    if(this._selectedPet === pet) {
+    if (this._selectedPet === pet) {
       this._selectedPet = undefined;
       return;
     }
-     this._selectedPet = pet;
+    this._selectedPet = pet;
   }
 
   get selectedPet(): Pet {

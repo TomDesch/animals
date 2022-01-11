@@ -12,10 +12,6 @@ export class PetService {
 
   private readonly _responseUrl: string;
 
-  get responseUrl(): string {
-    return this._responseUrl;
-  }
-
   constructor(private http: HttpClient) {
     this._responseUrl = `${environment.backendUrl}/pets`;
   }

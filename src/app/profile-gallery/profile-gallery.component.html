@@ -32,25 +32,18 @@
                      [(ngModel)]="searchText">
             </div>
           </section>
+
+          <!--    Display the selected pet -->
+          <ng-container *ngIf="selectedPet">
+            <section id="petProfile" class="tiny-dialog fader">
+              <h3>{{selectedPet.name}}</h3>
+              <p>{{selectedPet.profileText}}</p>
+              <p>Popularity: {{selectedPet.popularity}}</p>
+            </section>
+          </ng-container>
         </div>
       </div>
     </ng-container>
-
-    <!--    Display the selected pet -->
-    <ng-container *ngIf="selectedPet">
-      <div class="col-md-3">
-        <div class="gallery-detail">
-          <section id="petProfile" class="tiny-dialog fader">
-            <h3>{{selectedPet.name}}</h3>
-
-            <p>{{selectedPet.profileText}}</p>
-
-            <p>Popularity: {{selectedPet.popularity}}</p>
-          </section>
-        </div>
-      </div>
-    </ng-container>
-
 
   </div>
 </div>
